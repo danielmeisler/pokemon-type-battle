@@ -1,3 +1,13 @@
+@font-face {
+	font-family: "Acme";
+	src: url("./assets/fonts/Acme-Regular.ttf") format("truetype");
+	font-display: swap;
+}
+
+:root {
+	--font: Acme, system-ui, Arial, sans-serif;
+}
+
 body {
 	width: 100dvw;
 	height: 100dvh;

@@ -34,6 +34,7 @@ class Button extends LitElement {
       border-radius: 2vh;
       transform: translateY(0);
       transition: transform 0.1s ease-in-out;
+      font-family: var(--font);
 
       &:active {
         transform: translateY(10%);
