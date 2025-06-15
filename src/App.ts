@@ -7,7 +7,7 @@ class App extends LitElement {
 
 	render() {
 		return html`
-			<div class="app"></div>
+			<ptb-layout></ptb-layout>
 		`;
 	}
 }

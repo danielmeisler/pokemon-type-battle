@@ -1,1 +1,2 @@
-var t={};export{t as templates};
+var t = {};
+export { t as templates };

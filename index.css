@@ -3,4 +3,5 @@ body {
 	height: 100dvh;
 	margin: 0;
 	padding: 0;
+	background-image: url("/assets/app/ptb-background.png");
 }
