@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, css, html } from 'lit';
 
 class Logo extends LitElement {
 	static styles = css`
@@ -22,4 +22,4 @@ class Logo extends LitElement {
 	}
 }
 
-customElements.define("ptb-logo", Logo);
+customElements.define('ptb-logo', Logo);

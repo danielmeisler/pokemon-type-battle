@@ -6,6 +6,7 @@
 
 :root {
 	--font: Acme, system-ui, Arial, sans-serif;
+	--font-color: #ffffff;
 }
 
 body {
@@ -14,4 +15,6 @@ body {
 	margin: 0;
 	padding: 0;
 	background-image: url("/assets/app/ptb-background.png");
+	font-family: var(--font);
+	color: var(--font-color);
 }

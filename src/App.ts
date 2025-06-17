@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, css, html } from 'lit';
 
 class App extends LitElement {
 	static styles = css`
@@ -7,9 +7,9 @@ class App extends LitElement {
 
 	render() {
 		return html`
-			<ptb-layout></ptb-layout>
+			<ptb-view-game></ptb-view-game>
 		`;
 	}
 }
 
-customElements.define("ptb-app", App);
+customElements.define('ptb-app', App);
