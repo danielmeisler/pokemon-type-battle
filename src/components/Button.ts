@@ -5,7 +5,7 @@ class Button extends LitElement {
 	static styles = css`
     :host {
       --button-font: var(--font);
-      --button-font-size: 46px;
+      --button-font-size: 2em;
       
       --font-color: #2A2A2A;
       --background-color: #ffffff;
@@ -26,7 +26,7 @@ class Button extends LitElement {
         width: 100%;
         height: 50%;
         background-color: var(--shadow-color);
-        border-radius: 2vh;
+        border-radius: var(--ptb-border-radius);
       }
     }
 
@@ -42,7 +42,7 @@ class Button extends LitElement {
       cursor: pointer;
       outline: inherit;
       border: 3px solid var(--shadow-color);
-      border-radius: 2vh;
+      border-radius: var(--ptb-border-radius);
       transform: translateY(0);
       transition: transform var(--anim-time) ease-in-out;
 
