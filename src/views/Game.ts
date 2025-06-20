@@ -36,9 +36,9 @@ class Game extends LitElement {
         <div class="game">
           <div class="battle-field">
             <ptb-field
-            defender-icon="/assets/types/test.svg"
+            defender-icon="/assets/types/poison.svg"
             defender-type="Poison"
-            attacker-icon="/assets/types/test.svg"
+            attacker-icon="/assets/types/electric.svg"
             attacker-type="Electric"
             ></ptb-field>
           </div>
