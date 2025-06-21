@@ -13,7 +13,7 @@ class Field extends LitElement {
 
       --type-icon-circle-size: 60%;
       --type-icon-size: 70%;
-      --type-icon-padding: 25px;
+      --type-icon-padding: 20px;
 
       --type-name-font-size: 2em;
 
@@ -26,7 +26,9 @@ class Field extends LitElement {
       position: relative;
       background-color: var(--background-color);
       border-radius: var(--ptb-border-radius);
-      border: var(--border-width) solid var(--border-color);
+      border-width: var(--border-width);
+      border-style: solid;
+      border-color: var(--defender-color, --border-color) var(--border-color) var(--attacker-color, --border-color) var(--border-color);
       box-sizing: border-box;
     }
 
