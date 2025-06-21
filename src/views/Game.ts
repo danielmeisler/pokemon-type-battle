@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit';
-import { types } from '../data/types.js';
+import { type PokemonType, type Type, types } from '../data/types.js';
 
 class Game extends LitElement {
 	static styles = css`
@@ -31,18 +31,27 @@ class Game extends LitElement {
     }
   `;
 
+	randomType(): Type {
+		const typeKeys = Object.keys(types) as Type[];
+		const randomIndex = Math.floor(Math.random() * typeKeys.length);
+		return typeKeys[randomIndex];
+	}
+
 	render() {
+		const attackerType: PokemonType = types[this.randomType()];
+		const defenderType: PokemonType = types[this.randomType()];
+
 		return html`
       <ptb-layout>
         <div class="game">
           <div class="battle-field">
             <ptb-field
-              defender-color="${types.poison.color}"
-              defender-icon="${types.poison.icon}"
-              defender-type="${types.poison.label}"
-              attacker-color="${types.electric.color}"
-              attacker-icon="${types.electric.icon}"
-              attacker-type="${types.electric.label}"
+              defender-color="${attackerType.color}"
+              defender-icon="${attackerType.icon}"
+              defender-type="${attackerType.label}"
+              attacker-color="${defenderType.color}"
+              attacker-icon="${defenderType.icon}"
+              attacker-type="${defenderType.label}"
             ></ptb-field>
           </div>
 

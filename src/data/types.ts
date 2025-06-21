@@ -178,4 +178,4 @@ const types: Types = {
 	},
 };
 
-export { types, type Type };
+export { types, type PokemonType, type Type };
