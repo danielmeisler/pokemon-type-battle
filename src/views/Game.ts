@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit';
+import { types } from '../data/types.js';
 
 class Game extends LitElement {
 	static styles = css`
@@ -36,10 +37,12 @@ class Game extends LitElement {
         <div class="game">
           <div class="battle-field">
             <ptb-field
-            defender-icon="/assets/types/poison.svg"
-            defender-type="Poison"
-            attacker-icon="/assets/types/electric.svg"
-            attacker-type="Electric"
+              defender-color="${types.poison.color}"
+              defender-icon="${types.poison.icon}"
+              defender-type="${types.poison.label}"
+              attacker-color="${types.electric.color}"
+              attacker-icon="${types.electric.icon}"
+              attacker-type="${types.electric.label}"
             ></ptb-field>
           </div>
 

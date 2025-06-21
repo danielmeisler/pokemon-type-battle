@@ -11,10 +11,13 @@ class Field extends LitElement {
       --center-size: 20%;
       --fist-size: 50%;
 
+      --type-icon-circle-size: 60%;
       --type-icon-size: 70%;
-      --type-icon-padding: 5%;
+      --type-icon-padding: 25px;
 
       --type-name-font-size: 2em;
+
+      --shadow-color: #2A2A2A;
     }
 
     .field-container {
@@ -79,6 +82,24 @@ class Field extends LitElement {
         position: absolute;
         right: var(--type-icon-padding);
         top: var(--type-icon-padding);
+        background-color: var(--defender-color);
+        height: var(--type-icon-circle-size);
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10%;
+          width: 100%;
+          aspect-ratio: 1/1;
+          background-color: var(--shadow-color);
+          border-radius: 100%;
+          z-index: -1;
+        }
 
         img {
           height: var(--type-icon-size);
@@ -91,6 +112,7 @@ class Field extends LitElement {
         left: var(--type-icon-padding);
         top: var(--type-icon-padding);
         font-size: var(--type-name-font-size);
+        text-shadow: 0 0 5px var(--shadow-color);
       }
     }
 
@@ -102,7 +124,25 @@ class Field extends LitElement {
       .attacker-type-icon {
         position: absolute;
         left: var(--type-icon-padding);
-        bottom: var(--type-icon-padding);
+        bottom: calc(var(--type-icon-padding) + 5%);
+        background-color: var(--attacker-color);
+        height: var(--type-icon-circle-size);
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10%;
+          width: 100%;
+          aspect-ratio: 1/1;
+          background-color: var(--shadow-color);
+          border-radius: 100%;
+          z-index: -1;
+        }
 
         img {
           height: var(--type-icon-size);
@@ -115,19 +155,30 @@ class Field extends LitElement {
         right: var(--type-icon-padding);
         bottom: var(--type-icon-padding);
         font-size: var(--type-name-font-size);
+        text-shadow: 0 0 5px var(--shadow-color);
       }
     }
   `;
 
+	@property({ attribute: 'attacker-color' }) attackerColor = '';
 	@property({ attribute: 'attacker-icon' }) attackerIcon = '';
 	@property({ attribute: 'attacker-type' }) attackerType = '';
+	@property({ attribute: 'defender-color' }) defenderColor = '';
 	@property({ attribute: 'defender-icon' }) defenderIcon = '';
 	@property({ attribute: 'defender-type' }) defenderType = '';
+	@property({ attribute: 'defender-color-duo' }) defenderColorDuo? = '';
 	@property({ attribute: 'defender-icon-duo' }) defenderIconDuo? = '';
 	@property({ attribute: 'defender-type-duo' }) defenderTypeDuo? = '';
 
 	render() {
 		return html`
+    <style>
+      :host {
+        --attacker-color: ${this.attackerColor};
+        --defender-color: ${this.defenderColor};
+        --defender-color-duo: ${this.defenderColorDuo};
+      }
+    </style>
       <div class="field-container">
 
         <div class="center">
