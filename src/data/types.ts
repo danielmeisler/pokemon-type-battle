@@ -1,5 +1,7 @@
 import { msg } from '@lit/localize';
 
+type Effectiveness = 'nullified' | 'quarter' | 'half' | 'neutral' | 'double' | 'quadruple';
+
 type Type =
 	| 'normal'
 	| 'fighting'
@@ -178,4 +180,4 @@ const types: Types = {
 	},
 };
 
-export { types, type PokemonType, type Type };
+export { types, type Effectiveness, type PokemonType, type Type };
