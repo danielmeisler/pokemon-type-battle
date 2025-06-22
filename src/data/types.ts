@@ -23,6 +23,7 @@ type Type =
 	| 'fairy';
 
 interface PokemonType {
+	type: Type;
 	label: string;
 	color: string;
 	icon: string;
@@ -35,6 +36,7 @@ type Types = Record<Type, PokemonType>;
 
 const types: Types = {
 	normal: {
+		type: 'normal',
 		label: msg('Normal'),
 		color: '#919AA2',
 		icon: '/assets/types/normal.svg',
@@ -43,6 +45,7 @@ const types: Types = {
 		nullified: ['ghost'],
 	},
 	fighting: {
+		type: 'fighting',
 		label: msg('Fighting'),
 		color: '#CF3E69',
 		icon: '/assets/types/fighting.svg',
@@ -51,6 +54,7 @@ const types: Types = {
 		nullified: ['ghost'],
 	},
 	flying: {
+		type: 'flying',
 		label: msg('Flying'),
 		color: '#90AADE',
 		icon: '/assets/types/flying.svg',
@@ -59,6 +63,7 @@ const types: Types = {
 		nullified: [],
 	},
 	poison: {
+		type: 'poison',
 		label: msg('Poison'),
 		color: '#AC6AC9',
 		icon: '/assets/types/poison.svg',
@@ -67,6 +72,7 @@ const types: Types = {
 		nullified: ['steel'],
 	},
 	ground: {
+		type: 'ground',
 		label: msg('Ground'),
 		color: '#DA7844',
 		icon: '/assets/types/ground.svg',
@@ -75,6 +81,7 @@ const types: Types = {
 		nullified: ['flying'],
 	},
 	rock: {
+		type: 'rock',
 		label: msg('Rock'),
 		color: '#C8B88C',
 		icon: '/assets/types/rock.svg',
@@ -83,6 +90,7 @@ const types: Types = {
 		nullified: [],
 	},
 	bug: {
+		type: 'bug',
 		label: msg('Bug'),
 		color: '#91C228',
 		icon: '/assets/types/bug.svg',
@@ -91,6 +99,7 @@ const types: Types = {
 		nullified: [],
 	},
 	ghost: {
+		type: 'ghost',
 		label: msg('Ghost'),
 		color: '#5169AE',
 		icon: '/assets/types/ghost.svg',
@@ -99,6 +108,7 @@ const types: Types = {
 		nullified: ['normal'],
 	},
 	steel: {
+		type: 'steel',
 		label: msg('Steel'),
 		color: '#5A8FA2',
 		icon: '/assets/types/steel.svg',
@@ -107,6 +117,7 @@ const types: Types = {
 		nullified: [],
 	},
 	fire: {
+		type: 'fire',
 		label: msg('Fire'),
 		color: '#FF9D53',
 		icon: '/assets/types/fire.svg',
@@ -115,6 +126,7 @@ const types: Types = {
 		nullified: [],
 	},
 	water: {
+		type: 'water',
 		label: msg('Water'),
 		color: '#4C91D6',
 		icon: '/assets/types/water.svg',
@@ -123,6 +135,7 @@ const types: Types = {
 		nullified: [],
 	},
 	grass: {
+		type: 'grass',
 		label: msg('Grass'),
 		color: '#63BC5B',
 		icon: '/assets/types/grass.svg',
@@ -131,6 +144,7 @@ const types: Types = {
 		nullified: [],
 	},
 	electric: {
+		type: 'electric',
 		label: msg('Electric'),
 		color: '#F3D338',
 		icon: '/assets/types/electric.svg',
@@ -139,6 +153,7 @@ const types: Types = {
 		nullified: ['ground'],
 	},
 	psychic: {
+		type: 'psychic',
 		label: msg('Psychic'),
 		color: '#F97277',
 		icon: '/assets/types/psychic.svg',
@@ -147,6 +162,7 @@ const types: Types = {
 		nullified: ['dark'],
 	},
 	ice: {
+		type: 'ice',
 		label: msg('Ice'),
 		color: '#75CFC1',
 		icon: '/assets/types/ice.svg',
@@ -155,6 +171,7 @@ const types: Types = {
 		nullified: [],
 	},
 	dragon: {
+		type: 'dragon',
 		label: msg('Dragon'),
 		color: '#036DC5',
 		icon: '/assets/types/dragon.svg',
@@ -163,6 +180,7 @@ const types: Types = {
 		nullified: ['fairy'],
 	},
 	dark: {
+		type: 'dark',
 		label: msg('Dark'),
 		color: '#5A5266',
 		icon: '/assets/types/dark.svg',
@@ -171,6 +189,7 @@ const types: Types = {
 		nullified: [],
 	},
 	fairy: {
+		type: 'fairy',
 		label: msg('Fairy'),
 		color: '#ED90E7',
 		icon: '/assets/types/fairy.svg',

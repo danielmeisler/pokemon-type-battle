@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
+export type ButtonState = 'neutral' | 'right' | 'wrong';
+
 class Button extends LitElement {
 	static styles = css`
     :host {
@@ -9,7 +11,6 @@ class Button extends LitElement {
       
       --font-color: #2A2A2A;
       --background-color: #ffffff;
-      --shadow-color: #2A2A2A;
 
       --anim-time: 0.1s;
     }
@@ -59,9 +60,26 @@ class Button extends LitElement {
   `;
 
 	@property() direction: 'upward' | 'downward' = 'upward';
+	@property() state: ButtonState = 'neutral';
+
+	getStateColor() {
+		switch (this.state) {
+			case 'right':
+				return '#75d26a';
+			case 'wrong':
+				return '#b53232';
+			default:
+				return '#2A2A2A';
+		}
+	}
 
 	render() {
 		return html`
+      <style>
+        :host {
+          --shadow-color: ${this.getStateColor()};
+        }
+      </style>
       <div class="button-container">
         <button>
           <slot></slot>
