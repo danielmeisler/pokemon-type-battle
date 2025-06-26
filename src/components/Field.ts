@@ -60,6 +60,11 @@ class Field extends LitElement {
         animation: rotate 1s ease-in-out;
       }
 
+      .rotate {
+        transform: rotate(0deg);
+        animation: rotate 1s ease-in-out;
+      }
+
       .fist {
         height: var(--fist-size);
         aspect-ratio: 1 / 1;
@@ -172,20 +177,23 @@ class Field extends LitElement {
 	@property({ attribute: 'defender-icon-duo' }) defenderIconDuo? = '';
 	@property({ attribute: 'defender-type-duo' }) defenderTypeDuo? = '';
 
+	@property({ type: Boolean, attribute: 'is-animation-active' }) isAnimationActive = false;
+
 	render() {
+		console.log(this.isAnimationActive);
 		return html`
-    <style>
-      :host {
-        --attacker-color: ${this.attackerColor};
-        --defender-color: ${this.defenderColor};
-        --defender-color-duo: ${this.defenderColorDuo};
-      }
-    </style>
+      <style>
+        :host {
+          --attacker-color: ${this.attackerColor};
+          --defender-color: ${this.defenderColor};
+          --defender-color-duo: ${this.defenderColorDuo};
+        }
+      </style>
       <div class="field-container">
 
         <div class="center">
           <div class="attack-icon">
-            <img class="arrow" src="/assets/icons/attack-arrow.svg">
+            <img class="arrow ${this.isAnimationActive ? 'rotate' : ''}" src="/assets/icons/attack-arrow.svg">
             <img class="fist" src="/assets/icons/attack-fist.svg">
           </div>
         </div>

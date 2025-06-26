@@ -4,16 +4,25 @@ class Layout extends LitElement {
 	static styles = css`
     :host {
       --content-gap: 20px;
+      --content-max-width: 400px;
+    }
+
+    .container {
+      width: 100dvw;
+      height: 100dvh;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
     }
 
     .layout {
-      width: 100dvw;
-      height: 100dvh;
+      height: 100%;
+      width: 100%;
+      max-width: var(--content-max-width);
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      box-sizing: border-box;
       gap: var(--content-gap);
     }
 
@@ -34,6 +43,7 @@ class Layout extends LitElement {
 
 	render() {
 		return html`
+    <div class="container">
       <div class="layout">
         <div class="header">
           <ptb-logo></ptb-logo>
@@ -45,6 +55,7 @@ class Layout extends LitElement {
           Daniel Meisler
         </div>
       </div>
+    </div>
     `;
 	}
 }

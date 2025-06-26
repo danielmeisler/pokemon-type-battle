@@ -5,16 +5,11 @@ import { type Effectiveness, type PokemonType, type Type, types } from '../data/
 
 class Game extends LitElement {
 	static styles = css`
-    :host {
-      --max-width: 400px;
-    }
-
     .game {
       display: flex;
       flex-direction: column;
       height: 100%;
       width: 100%;
-      max-width: var(--max-width);
       gap: 20px;
       box-sizing: border-box;
     }
@@ -39,7 +34,9 @@ class Game extends LitElement {
 	@state() userEffectiveness: Effectiveness = 'neutral';
 	@state() correctEffectiveness: Effectiveness = 'neutral';
 
-	@state() buttonKeyMap: Record<Effectiveness, ButtonState> = {
+	@state() isFieldAnimationActive = false;
+
+	@state() buttonStatesMap: Record<Effectiveness, ButtonState> = {
 		nullified: 'neutral',
 		quarter: 'neutral',
 		half: 'neutral',
@@ -47,6 +44,17 @@ class Game extends LitElement {
 		double: 'neutral',
 		quadruple: 'neutral',
 	};
+
+	@state() buttonDisabledMap: Record<Effectiveness, boolean> = {
+		nullified: false,
+		quarter: false,
+		half: false,
+		neutral: false,
+		double: false,
+		quadruple: false,
+	};
+
+	#resetTime = 1000;
 
 	randomType(): Type {
 		const typeKeys = Object.keys(types) as Type[];
@@ -62,15 +70,31 @@ class Game extends LitElement {
 			return;
 		}
 
+		this.toggleDisabledButtons(true);
+
 		this.userEffectiveness = value;
 		this.correctEffectiveness = this.getEffectiveness();
 
 		if (this.userEffectiveness === this.correctEffectiveness) {
-			this.buttonKeyMap[this.userEffectiveness] = 'right';
+			this.buttonStatesMap[this.userEffectiveness] = 'right';
 		} else if (this.userEffectiveness !== this.correctEffectiveness) {
-			this.buttonKeyMap[this.userEffectiveness] = 'wrong';
-			this.buttonKeyMap[this.correctEffectiveness] = 'right';
+			this.buttonStatesMap[this.userEffectiveness] = 'wrong';
+			this.buttonStatesMap[this.correctEffectiveness] = 'right';
 		}
+
+		setTimeout(() => {
+			this.resetButtons();
+			this.toggleDisabledButtons(false);
+			this.getTypes();
+			this.isFieldAnimationActive = false;
+		}, this.#resetTime);
+	}
+
+	getTypes() {
+		this.isFieldAnimationActive = true;
+		console.log(this.isFieldAnimationActive);
+		this.attackerType = types[this.randomType()];
+		this.defenderType = types[this.randomType()];
 	}
 
 	getEffectiveness() {
@@ -87,8 +111,17 @@ class Game extends LitElement {
 	}
 
 	resetButtons() {
-		// Reset map
-		// this.buttonKeyMap= 'neutral';
+		for (const key in this.buttonStatesMap) {
+			this.buttonStatesMap[key as keyof typeof this.buttonStatesMap] = 'neutral';
+		}
+		this.requestUpdate();
+	}
+
+	toggleDisabledButtons(disabled: boolean) {
+		for (const key in this.buttonDisabledMap) {
+			this.buttonDisabledMap[key as keyof typeof this.buttonDisabledMap] = disabled;
+		}
+		this.requestUpdate();
 	}
 
 	render() {
@@ -103,16 +136,17 @@ class Game extends LitElement {
               attacker-color="${this.attackerType.color}"
               attacker-icon="${this.attackerType.icon}"
               attacker-type="${this.attackerType.label}"
+							?is-animation-active="${this.isFieldAnimationActive}"
             ></ptb-field>
           </div>
 
           <div class="button-grid">
-            <ptb-button @click="${this.handleClick}" state="${this.buttonKeyMap.nullified}" data-effectiveness="nullified">0x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonKeyMap.quarter}" data-effectiveness="quarter">¼x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonKeyMap.half}" data-effectiveness="half">½x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonKeyMap.neutral}" data-effectiveness="neutral">1x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonKeyMap.double}" data-effectiveness="double">2x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonKeyMap.quadruple}" data-effectiveness="quadruple">4x</ptb-button>
+            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.nullified}" ?is-disabled="${this.buttonDisabledMap.nullified}" data-effectiveness="nullified">0x</ptb-button>
+            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.quarter}" ?is-disabled="${this.buttonDisabledMap.quarter}" data-effectiveness="quarter">¼x</ptb-button>
+            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.half}" ?is-disabled="${this.buttonDisabledMap.half}" data-effectiveness="half">½x</ptb-button>
+            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.neutral}" ?is-disabled="${this.buttonDisabledMap.neutral}" data-effectiveness="neutral">1x</ptb-button>
+            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.double}" ?is-disabled="${this.buttonDisabledMap.double}" data-effectiveness="double">2x</ptb-button>
+            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.quadruple}" ?is-disabled="${this.buttonDisabledMap.quadruple}" data-effectiveness="quadruple">4x</ptb-button>
           </div>
         </div>
       </ptb-layout>

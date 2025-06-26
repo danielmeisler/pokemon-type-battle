@@ -59,8 +59,8 @@ class Button extends LitElement {
     }
   `;
 
-	@property() direction: 'upward' | 'downward' = 'upward';
 	@property() state: ButtonState = 'neutral';
+	@property({ type: Boolean, attribute: 'is-disabled' }) isDisabled = false;
 
 	getStateColor() {
 		switch (this.state) {
@@ -81,7 +81,7 @@ class Button extends LitElement {
         }
       </style>
       <div class="button-container">
-        <button>
+        <button ?disabled="${this.isDisabled}">
           <slot></slot>
         </button>
       </div>
