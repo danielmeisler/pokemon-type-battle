@@ -7,7 +7,7 @@ class Button extends LitElement {
 	static styles = css`
     :host {
       --button-font: var(--font);
-      --button-font-size: 2em;
+      --button-font-size: 2cqw;
       
       --font-color: #2A2A2A;
       --background-color: #ffffff;

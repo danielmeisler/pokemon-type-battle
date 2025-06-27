@@ -21,9 +21,9 @@ class Game extends LitElement {
 
     .button-grid {
       width: 100%;
-      aspect-ratio: 2 / 1;
+      aspect-ratio: 1.5 / 1;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
   `;
@@ -142,11 +142,11 @@ class Game extends LitElement {
 
           <div class="button-grid">
             <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.nullified}" ?is-disabled="${this.buttonDisabledMap.nullified}" data-effectiveness="nullified">0x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.quarter}" ?is-disabled="${this.buttonDisabledMap.quarter}" data-effectiveness="quarter">¼x</ptb-button>
+            <!-- <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.quarter}" ?is-disabled="${this.buttonDisabledMap.quarter}" data-effectiveness="quarter">¼x</ptb-button> -->
             <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.half}" ?is-disabled="${this.buttonDisabledMap.half}" data-effectiveness="half">½x</ptb-button>
             <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.neutral}" ?is-disabled="${this.buttonDisabledMap.neutral}" data-effectiveness="neutral">1x</ptb-button>
             <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.double}" ?is-disabled="${this.buttonDisabledMap.double}" data-effectiveness="double">2x</ptb-button>
-            <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.quadruple}" ?is-disabled="${this.buttonDisabledMap.quadruple}" data-effectiveness="quadruple">4x</ptb-button>
+            <!-- <ptb-button @click="${this.handleClick}" state="${this.buttonStatesMap.quadruple}" ?is-disabled="${this.buttonDisabledMap.quadruple}" data-effectiveness="quadruple">4x</ptb-button> -->
           </div>
         </div>
       </ptb-layout>
