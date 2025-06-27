@@ -9,6 +9,23 @@
     /* eslint-disable @typescript-eslint/no-explicit-any */
 
     export const templates = {
-      
+      's9ff3121d30f88d52': `Normal`,
+'s7834caa14394d077': `Fighting`,
+'s184f6f0ddbd9247e': `Flying`,
+'s706d8041da75a171': `Poison`,
+'s9f71713287fb245e': `Ground`,
+'scaa6172bef74e234': `Rock`,
+'s166a5119b1139f75': `Bug`,
+'s7bd9a75a1618ca30': `Ghost`,
+'sd1bb1913cc348824': `Steel`,
+'sd19ef684ee6b5c99': `Fire`,
+'s938ab4b2f4fb10d0': `Water`,
+'sef3b788fe726687d': `Grass`,
+'s2864e10d28d8587e': `Electric`,
+'sc14bf97737199444': `Psychic`,
+'s419efc19c98544a0': `Ice`,
+'s596d66b5f7a4973e': `Dragon`,
+'sac895c732f350ac5': `Dark`,
+'s58b45727a301421e': `Fairy`,
     };
   
