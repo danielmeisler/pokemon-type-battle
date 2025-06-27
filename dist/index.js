@@ -946,8 +946,8 @@
 
         <div class="center">
           <div class="attack-icon">
-            <img class="arrow ${this.isAnimationActive ? "rotate" : ""}" src="/assets/icons/attack-arrow.svg">
-            <img class="fist" src="/assets/icons/attack-fist.svg">
+            <img class="arrow ${this.isAnimationActive ? "rotate" : ""}" src="./assets/icons/attack-arrow.svg">
+            <img class="fist" src="./assets/icons/attack-fist.svg">
           </div>
         </div>
 
@@ -1026,7 +1026,7 @@
     render() {
       return x`
       <div class="logo-container">
-        <img src="/assets/app/logo.svg">
+        <img src="./assets/app/logo.svg">
       </div>
     `;
     }
@@ -1154,7 +1154,7 @@
       type: "normal",
       label: msg("Normal"),
       color: "#919AA2",
-      icon: "/assets/types/normal.svg",
+      icon: "./assets/types/normal.svg",
       effective: [],
       ineffective: ["rock", "steel"],
       nullified: ["ghost"]
@@ -1163,7 +1163,7 @@
       type: "fighting",
       label: msg("Fighting"),
       color: "#CF3E69",
-      icon: "/assets/types/fighting.svg",
+      icon: "./assets/types/fighting.svg",
       effective: ["normal", "rock", "steel", "ice", "dark"],
       ineffective: ["flying", "poison", "bug", "psychic", "fairy"],
       nullified: ["ghost"]
@@ -1172,7 +1172,7 @@
       type: "flying",
       label: msg("Flying"),
       color: "#90AADE",
-      icon: "/assets/types/flying.svg",
+      icon: "./assets/types/flying.svg",
       effective: ["fighting", "bug", "grass"],
       ineffective: ["rock", "steel", "electric"],
       nullified: []
@@ -1181,7 +1181,7 @@
       type: "poison",
       label: msg("Poison"),
       color: "#AC6AC9",
-      icon: "/assets/types/poison.svg",
+      icon: "./assets/types/poison.svg",
       effective: ["grass", "fairy"],
       ineffective: ["poison", "ground", "rock", "ghost"],
       nullified: ["steel"]
@@ -1190,7 +1190,7 @@
       type: "ground",
       label: msg("Ground"),
       color: "#DA7844",
-      icon: "/assets/types/ground.svg",
+      icon: "./assets/types/ground.svg",
       effective: ["poison", "rock", "steel", "fire", "electric"],
       ineffective: ["bug", "grass"],
       nullified: ["flying"]
@@ -1199,7 +1199,7 @@
       type: "rock",
       label: msg("Rock"),
       color: "#C8B88C",
-      icon: "/assets/types/rock.svg",
+      icon: "./assets/types/rock.svg",
       effective: ["flying", "bug", "fire", "ice"],
       ineffective: ["fighting", "ground", "steel"],
       nullified: []
@@ -1208,7 +1208,7 @@
       type: "bug",
       label: msg("Bug"),
       color: "#91C228",
-      icon: "/assets/types/bug.svg",
+      icon: "./assets/types/bug.svg",
       effective: ["grass", "psychic", "dark"],
       ineffective: ["fighting", "flying", "poison", "ghost", "steel", "fire", "fairy"],
       nullified: []
@@ -1217,7 +1217,7 @@
       type: "ghost",
       label: msg("Ghost"),
       color: "#5169AE",
-      icon: "/assets/types/ghost.svg",
+      icon: "./assets/types/ghost.svg",
       effective: ["ghost", "psychic"],
       ineffective: ["dark"],
       nullified: ["normal"]
@@ -1226,7 +1226,7 @@
       type: "steel",
       label: msg("Steel"),
       color: "#5A8FA2",
-      icon: "/assets/types/steel.svg",
+      icon: "./assets/types/steel.svg",
       effective: ["rock", "ice", "fairy"],
       ineffective: ["steel", "fire", "water", "electric"],
       nullified: []
@@ -1235,7 +1235,7 @@
       type: "fire",
       label: msg("Fire"),
       color: "#FF9D53",
-      icon: "/assets/types/fire.svg",
+      icon: "./assets/types/fire.svg",
       effective: ["bug", "steel", "grass", "ice"],
       ineffective: ["rock", "fire", "water", "dragon"],
       nullified: []
@@ -1244,7 +1244,7 @@
       type: "water",
       label: msg("Water"),
       color: "#4C91D6",
-      icon: "/assets/types/water.svg",
+      icon: "./assets/types/water.svg",
       effective: ["ground", "rock", "fire"],
       ineffective: ["water", "grass", "dragon"],
       nullified: []
@@ -1253,7 +1253,7 @@
       type: "grass",
       label: msg("Grass"),
       color: "#63BC5B",
-      icon: "/assets/types/grass.svg",
+      icon: "./assets/types/grass.svg",
       effective: ["ground", "rock", "water"],
       ineffective: ["flying", "poison", "bug", "steel", "fire", "grass", "dragon"],
       nullified: []
@@ -1262,7 +1262,7 @@
       type: "electric",
       label: msg("Electric"),
       color: "#F3D338",
-      icon: "/assets/types/electric.svg",
+      icon: "./assets/types/electric.svg",
       effective: ["flying", "water"],
       ineffective: ["grass", "electric", "dragon"],
       nullified: ["ground"]
@@ -1271,7 +1271,7 @@
       type: "psychic",
       label: msg("Psychic"),
       color: "#F97277",
-      icon: "/assets/types/psychic.svg",
+      icon: "./assets/types/psychic.svg",
       effective: ["fighting", "poison"],
       ineffective: ["steel", "psychic"],
       nullified: ["dark"]
@@ -1280,7 +1280,7 @@
       type: "ice",
       label: msg("Ice"),
       color: "#75CFC1",
-      icon: "/assets/types/ice.svg",
+      icon: "./assets/types/ice.svg",
       effective: ["flying", "ground", "grass", "dragon"],
       ineffective: ["steel", "fire", "water", "ice"],
       nullified: []
@@ -1289,7 +1289,7 @@
       type: "dragon",
       label: msg("Dragon"),
       color: "#036DC5",
-      icon: "/assets/types/dragon.svg",
+      icon: "./assets/types/dragon.svg",
       effective: ["dragon"],
       ineffective: ["steel"],
       nullified: ["fairy"]
@@ -1298,7 +1298,7 @@
       type: "dark",
       label: msg("Dark"),
       color: "#5A5266",
-      icon: "/assets/types/dark.svg",
+      icon: "./assets/types/dark.svg",
       effective: ["ghost", "psychic"],
       ineffective: ["fighting", "dark", "fairy"],
       nullified: []
@@ -1307,7 +1307,7 @@
       type: "fairy",
       label: msg("Fairy"),
       color: "#ED90E7",
-      icon: "/assets/types/fairy.svg",
+      icon: "./assets/types/fairy.svg",
       effective: ["fighting", "dragon", "dark"],
       ineffective: ["poison", "steel", "fire"],
       nullified: []

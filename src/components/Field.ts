@@ -193,8 +193,8 @@ class Field extends LitElement {
 
         <div class="center">
           <div class="attack-icon">
-            <img class="arrow ${this.isAnimationActive ? 'rotate' : ''}" src="/assets/icons/attack-arrow.svg">
-            <img class="fist" src="/assets/icons/attack-fist.svg">
+            <img class="arrow ${this.isAnimationActive ? 'rotate' : ''}" src="./assets/icons/attack-arrow.svg">
+            <img class="fist" src="./assets/icons/attack-fist.svg">
           </div>
         </div>
 

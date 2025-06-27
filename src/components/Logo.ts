@@ -16,7 +16,7 @@ class Logo extends LitElement {
 	render() {
 		return html`
       <div class="logo-container">
-        <img src="/assets/app/logo.svg">
+        <img src="./assets/app/logo.svg">
       </div>
     `;
 	}
